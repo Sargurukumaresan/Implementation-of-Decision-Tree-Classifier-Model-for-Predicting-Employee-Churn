@@ -7,25 +7,21 @@ To write a program to implement the Decision Tree Classifier Model for Predictin
 1. Hardware – PCs
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
-## Algorithm:
-1.Import the required libraries.
-2.Upload and read the dataset.
-3.Check for any null values using the isnull() function.
-4.From sklearn.tree import DecisionTreeClassifier and use criterion as entropy.
-5.Find the accuracy of the model and predict the required values by importing the required module from sklearn.
-
+## Algorithm
+1. Import pandas
+2. Import Decision tree classifier
+3. Fit the data in the model
+4. Find the accuracy score
 
 ## Program:
 ```
 /*
 Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
-Developed by: SARGURU K
+Developed by: SARGURU.
 RegisterNumber:  212222230134
-*/
-```
-```
+
 import pandas as pd
-data=pd.read_csv("/content/Employee_EX6.csv")
+data=pd.read_csv("/content/Employee.csv")
 data.head()
 data.info()
 data.isnull().sum()
@@ -35,7 +31,7 @@ le=LabelEncoder()
 data["salary"]=le.fit_transform(data["salary"])
 data.head()
 x=data[["satisfaction_level","last_evaluation","number_project","average_montly_hours","time_spend_company","Work_accident","promotion_last_5years","salary"]]
-x.head()
+x.head()    #no departments and no left
 y=data["left"]
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=100)
@@ -47,16 +43,34 @@ from sklearn import metrics
 accuracy=metrics.accuracy_score(y_test,y_pred)
 accuracy
 dt.predict([[0.5,0.8,9,260,6,0,1,2]])
+
+*/
 ```
 
 ## Output:
-![Screenshot 2024-04-02 155112](https://github.com/poojasen05/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/150784373/882d3d2e-d594-4aad-84f8-6cd8e90d3430)
+#### data.head()
+![Screenshot 2023-06-03 181522](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/28a02272-d076-488b-bc0e-258db61a3b29)
 
-![Screenshot 2024-04-02 155146](https://github.com/poojasen05/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/150784373/ebe49a44-989b-4b4a-95ab-ce9d68839899)
+#### data.info()
+![Screenshot 2023-06-03 181528](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/cdc55078-656b-49d7-b171-ba2be9a56bfd)
 
+#### isnull() and sum()
+![Screenshot 2023-06-03 181534](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/c8005750-fb30-47db-9c4d-6309e48560b7)
 
-![Screenshot 2024-04-02 155155](https://github.com/poojasen05/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/150784373/c28f4b0f-b4fe-43e7-8746-c7788933b38b)
-![Screenshot 2024-04-02 155229](https://github.com/poojasen05/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/150784373/8dcac9fc-1347-43c4-8699-ddb4df766c3c)
+#### data value counts()
+![Screenshot 2023-06-03 181649](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/8cbea8e5-088d-4896-8c3f-eabcedd9b7a0)
+
+#### data.head() for salary
+![Screenshot 2023-06-03 181719](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/7123868e-1b73-448a-a92c-bfcb52c69d22)
+
+#### x.head()
+![Screenshot 2023-06-03 181729](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/7900550f-09ae-4b93-baa2-4e1d8cd21967)
+
+#### accuracy value
+![Screenshot 2023-06-03 181805](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/d6235dee-d231-4eb2-9540-5a8fcc8d845f)
+
+#### data prediction
+![Screenshot 2023-06-03 181815](https://github.com/Yamunaasri/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/115707860/79384c60-837a-474e-adc4-cb88724287ce)
 
 
 ## Result:
